@@ -1,0 +1,36 @@
+# Автоматически нормализуем окончания строк
+* text=auto eol=lf
+
+# Улучшенное отображение изменений в C# коде
+*.cs diff=csharp
+
+# Макрос для текстовых файлов Unity
+[attr]unity-yaml-file -text merge=unityyamlmerge eol=lf
+
+# Все текстовые ассеты Unity
+*.anim unity-yaml-file
+*.asset unity-yaml-file
+*.brush unity-yaml-file
+*.controller unity-yaml-file
+*.flare unity-yaml-file
+*.fontsettings unity-yaml-file
+*.giparams unity-yaml-file
+*.guiskin unity-yaml-file
+*.mask unity-yaml-file
+*.mat unity-yaml-file
+*.meta unity-yaml-file
+*.mixer unity-yaml-file
+*.overrideController unity-yaml-file
+*.physicMaterial unity-yaml-file
+*.physicsMaterial2D unity-yaml-file
+*.playable unity-yaml-file
+*.prefab unity-yaml-file
+*.preset unity-yaml-file
+*.renderTexture unity-yaml-file
+*.shadervariants unity-yaml-file
+*.spriteatlas unity-yaml-file
+*.terrainlayer unity-yaml-file
+*.unity unity-yaml-file
+
+# Assembly Definitions (чтобы видеть изменения в PR)
+*.asmdef unity-yaml-file -linguist-generated
