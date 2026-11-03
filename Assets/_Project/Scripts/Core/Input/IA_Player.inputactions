@@ -1,0 +1,53 @@
+{
+    "version": 1,
+    "name": "IA_Player",
+    "maps": [
+        {
+            "name": "AM_PlayerMain",
+            "id": "3c058f86-3a1e-4235-8bd6-94c0c08c4ca7",
+            "actions": [
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "195483f2-26d1-43a4-b621-3e06e9c40067",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3dc845ba-aed4-4a87-8e07-17a983fcda66",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";S_PlayerMain",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "S_PlayerMain",
+            "bindingGroup": "S_PlayerMain",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}

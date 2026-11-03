@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f2516bbae564e408e713db192f9864, type: 3}
+  m_Name: SO_CameraSettings
+  m_EditorClassIdentifier: Assembly-CSharp::SO_CameraSettings
+  _lookInput: {fileID: -1179453415978303090, guid: 0d17fb29b3f45404e82bf07420cf8ef6, type: 3}
+  _mouseSensitivity: 0.1
+  _minPitch: -45
+  _maxPitch: 85
