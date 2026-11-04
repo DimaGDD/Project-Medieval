@@ -22,6 +22,11 @@ namespace Game.Features.Player
         private float _verticalVelocity;
         private Vector3 _horizontalMovement;
 
+        private float _jumpBufferTime;
+        private float _coyoteTime;
+        private float _jumpBufferCounter;
+        private float _coyoteCounter;
+
         private void Awake()
         {
             _characterController = GetComponent<CharacterController>();
@@ -32,11 +37,16 @@ namespace Game.Features.Player
             _rotationSpeed = _movementData.RotationSpeed;
             _gravity = _movementData.Gravity;
             _jumpHeight = _movementData.JumpHeight;
+
+            _jumpBufferTime = _movementData.JumpBufferTime;
+            _coyoteTime = _movementData.CoyoteTime;
         }
 
         private void Update()
         {
             MoveCharacter();
+            UpdateTimers();
+            CheckJump();
         }
 
         private void MoveCharacter()
@@ -77,18 +87,39 @@ namespace Game.Features.Player
             }
         }
 
-        private void OnJumpPerformed()
-        {
-            if (_characterController.isGrounded)
-                _verticalVelocity = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
-        }
-
         private void CalculateGravity()
         {
             if (_characterController.isGrounded && _verticalVelocity < 0f)
                 _verticalVelocity = -2f;
 
             _verticalVelocity += _gravity * Time.deltaTime;
+        }
+
+        private void OnJumpPerformed()
+        {
+            _jumpBufferCounter = _jumpBufferTime;
+        }
+
+        private void CheckJump()
+        {
+            if (_jumpBufferCounter > 0f && (_characterController.isGrounded || _coyoteCounter > 0f))
+            {
+                _verticalVelocity = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
+
+                _jumpBufferCounter = 0f;
+                _coyoteCounter = 0f;
+            }
+        }
+
+        private void UpdateTimers()
+        {
+            if (_characterController.isGrounded)
+                _coyoteCounter = _coyoteTime;
+            else
+                _coyoteCounter -= Time.deltaTime;
+
+            if (_jumpBufferCounter > 0f)
+                _jumpBufferCounter -= Time.deltaTime;
         }
 
         private void OnEnable()
