@@ -1,6 +1,6 @@
 {
     "name": "Game.Features.Player",
-    "rootNamespace": "",
+    "rootNamespace": "Game.Features.Player",
     "references": [
         "GUID:75469ad4d38634e559750d17036d5f7c"
     ],

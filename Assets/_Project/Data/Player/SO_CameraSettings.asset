@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f2516bbae564e408e713db192f9864, type: 3}
   m_Name: SO_CameraSettings
   m_EditorClassIdentifier: Assembly-CSharp::SO_CameraSettings
-  _lookInput: {fileID: -1179453415978303090, guid: 0d17fb29b3f45404e82bf07420cf8ef6, type: 3}
+  _lookInputRef: {fileID: -1179453415978303090, guid: 0d17fb29b3f45404e82bf07420cf8ef6, type: 3}
   _mouseSensitivity: 0.1
   _minPitch: -45
   _maxPitch: 85
+  _cameraHeightOffset: 1.2
