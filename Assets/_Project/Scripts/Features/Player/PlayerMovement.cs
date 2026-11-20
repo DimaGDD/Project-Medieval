@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
+using Game.Features.LevelingSystem;
 
 namespace Game.Features.Player
 {
@@ -10,6 +10,7 @@ namespace Game.Features.Player
         [Header("Ссылки")]
         [SerializeField] private Transform _cameraTransform;
         [SerializeField] private SO_MovementSettings _movementData;
+        [SerializeField] private CharacterStats _stats;
 
         private PlayerInputHandler _playerInputHandler;
 
@@ -33,13 +34,14 @@ namespace Game.Features.Player
             _playerInputHandler = GetComponent<PlayerInputHandler>();
             _cameraTransform = Camera.main.transform;
 
-            _moveSpeed = _movementData.MoveSpeed;
             _rotationSpeed = _movementData.RotationSpeed;
             _gravity = _movementData.Gravity;
             _jumpHeight = _movementData.JumpHeight;
 
             _jumpBufferTime = _movementData.JumpBufferTime;
             _coyoteTime = _movementData.CoyoteTime;
+
+            UpdateMoveSpeed();
         }
 
         private void Update()
@@ -125,11 +127,26 @@ namespace Game.Features.Player
         private void OnEnable()
         {
             _playerInputHandler.JumpPressed += OnJumpPerformed;
+
+            if (_stats != null) _stats.OnStatChanged += HandleStatChanged;
         }
 
         private void OnDisable()
         {
             _playerInputHandler.JumpPressed -= OnJumpPerformed;
+
+            if (_stats != null) _stats.OnStatChanged -= HandleStatChanged;
+        }
+
+        private void HandleStatChanged(StatType type)
+        {
+            if (type == StatType.MovementSpeed) UpdateMoveSpeed();
+        }
+
+        private void UpdateMoveSpeed()
+        {
+            float bonus = _stats != null ? _stats.GetStat(StatType.MovementSpeed) : 0f;
+            _moveSpeed = _movementData.MoveSpeed + bonus;
         }
     }
 }
