@@ -3,7 +3,8 @@
     "rootNamespace": "Game.Features.Player",
     "references": [
         "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:f9f0dc78e09389648b5af25b0b809d4b"
+        "GUID:f9f0dc78e09389648b5af25b0b809d4b",
+        "GUID:da5ccccbd5bd7524892437af6f3361d2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
