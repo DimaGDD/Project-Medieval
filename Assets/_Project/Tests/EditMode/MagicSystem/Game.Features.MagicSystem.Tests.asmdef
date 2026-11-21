@@ -1,0 +1,23 @@
+{
+	"name": "Game.Features.MagicSystem.Tests",
+	"rootNamespace": "Game.Features.MagicSystem.Tests",
+	"references": [
+		"GUID:725c102d159e8cd44b61b23be50d4b4b",
+		"GUID:f9f0dc78e09389648b5af25b0b809d4b",
+		"UnityEngine.TestRunner",
+		"UnityEditor.TestRunner"
+	],
+	"includePlatforms": [
+		"Editor"
+	],
+	"excludePlatforms": [],
+	"allowUnsafeCode": false,
+	"overrideReferences": false,
+	"precompiledReferences": [],
+	"autoReferenced": true,
+	"defineConstraints": [
+		"UNITY_INCLUDE_TESTS"
+	],
+	"versionDefines": [],
+	"noEngineReferences": false
+}
