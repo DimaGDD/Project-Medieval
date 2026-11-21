@@ -1,0 +1,22 @@
+{
+    "name": "Game.Features.Core.Tests",
+    "rootNamespace": "Game.Features.Core.Tests",
+    "references": [
+        "GUID:f9f0dc78e09389648b5af25b0b809d4b",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
