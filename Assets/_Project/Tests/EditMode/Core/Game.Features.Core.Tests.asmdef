@@ -3,6 +3,8 @@
     "rootNamespace": "Game.Features.Core.Tests",
     "references": [
         "GUID:f9f0dc78e09389648b5af25b0b809d4b",
+        "GUID:da5ccccbd5bd7524892437af6f3361d2",
+        "GUID:203bde280177933489ed59adf5f951c4",
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner"
     ],

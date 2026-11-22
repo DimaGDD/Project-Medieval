@@ -1,7 +1,6 @@
-using Game.Features.LevelingSystem;
-using UnityEditor.Graphs;
+using Game.Features.Core.Combat;
 
-namespace Game.Features.Player
+namespace Game.Features.LevelingSystem.Combat
 {
     public static class DamageTypeExtensions
     {
